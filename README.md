@@ -126,87 +126,127 @@ O back-office exibe os **5 cards de métricas em tempo real**, barra de busca in
 
 ## 🤖 6. O Mega Prompt e as Correções Pedidas Depois
 
-### 6.1 O Mega Prompt Inicial (Markdown)
-Antes de gerar o código da aplicação, o prompt abaixo foi estruturado e refinado junto ao ChatGPT para especificar em uma única instrução o fluxo do cliente, o painel administrativo, o gerador de prompt interno e a identidade visual:
+### 6.1 O Mega Prompt Inicial (Construção do MVP)
+Abaixo está o **Mega Prompt** utilizado para estruturar o MVP com o fluxo completo do cliente (Landing Page + WhatsApp), o Painel de Administração (`/admin`), a camada de persistência inicial, a identidade visual e os critérios de aceitação:
 
 ```markdown
-# Mega Prompt — MVP: Revisão Express de Currículo e LinkedIn (Currículo Express Tech)
+Construir o MVP de uma aplicação web de "Revisão Express de Currículo e LinkedIn" para candidatos da área de tecnologia, composta por Landing Page de alta conversão integrada ao WhatsApp e um Painel de Administração (/admin) para gestão de leads e aceleração do fluxo operacional manual.
 
-## 1. Contexto e Objetivo do Negócio
-Construa uma aplicação web moderna e responsiva em React + TypeScript + Tailwind CSS para o MVP do negócio "Currículo Express Tech": um serviço expresso de diagnóstico e reescrita de Currículo e LinkedIn voltado para profissionais de tecnologia que querem passar nos filtros de algoritmos ATS (Applicant Tracking Systems) e ser chamados para entrevistas.
+Requirements
 
-## 2. Identidade Visual e Paleta de Cores
-- **Cor Primária (Confiança e Tecnologia):** Azul Marinho Profundo (`#0F172A` e `#1E3A8A`)
-- **Cor de Fundo (Leitura Limpa):** Branco (`#FFFFFF`) e Cinza Gelo (`#F8FAFC`)
-- **Cor de Destaque e Conversão (CTA):** Verde WhatsApp (`#25D366`)
-- **Tipografia:** Sans-serif limpa (Inter), alto contraste e 100% responsiva (Mobile-First).
+R1. Landing Page de Alta Conversão (Fluxo do Cliente)
 
-## 3. Fluxo do Cliente — Rota Principal (`/`)
-1. **Hero Section:**
-   - Headline exata: "Seu currículo não passa nos filtros dos recrutadores? Nós reescrevemos para você ser chamado para entrevistas"
-   - Subtítulo destacando otimização focada em algoritmos ATS e recrutadores tech, com entrega em poucas horas.
-   - Botão CTA principal rolando suavemente até o formulário.
-2. **Seção Como Funciona (3 Passos):**
-   - Passo 1: "Preencha o formulário" (Nome, link do currículo/LinkedIn e área de tecnologia desejada).
-   - Passo 2: "Combine detalhes e pagamento no WhatsApp" (Alinhamento rápido e sem burocracia).
-   - Passo 3: "Receba seu perfil otimizado em poucas horas" (Diagnóstico ATS + nova versão pronta para aplicar).
-3. **Formulário de Captura Integrado ao WhatsApp:**
-   - Campos obrigatórios com validação em tempo real:
-     - `Nome Completo` (mínimo 3 caracteres)
-     - `Link do LinkedIn ou Currículo (Drive/PDF)` (validação estrita de URL válida com http/https)
-     - `Área de Atuação e Cargo Desejado` (ex: "Desenvolvedor Frontend React Júnior")
-   - Botão de envio: "Solicitar Análise via WhatsApp".
-   - Ao submeter:
-     1. Salvar o lead na camada de dados com status inicial `"Novo"` e timestamp atual.
-     2. Construir a URL do WhatsApp (`https://wa.me/5511999999999?text=...`) aplicando `encodeURIComponent` na mensagem exata:
-        `"Olá, acabei de preencher o formulário. Meu nome é [Nome], sou da área de [Área] e quero a revisão express."`
-     3. Abrir o WhatsApp em nova aba e exibir um banner de confirmação com link direto caso o bloqueador de pop-ups do navegador impeça a abertura automática.
+Desenvolver uma Single Page Application responsiva (React + Tailwind CSS) focada em candidatos e estudantes de tecnologia. A página deve conter:
 
-## 4. Fluxo Operacional — Painel de Administração (`/admin`)
-1. **Cards de Métricas no Topo:**
-   - Contadores dinâmicos em tempo real para: `Total de Leads`, `Novos`, `Aguardando Pagamento`, `Revisando (IA)` e `Entregues`.
-2. **Barra de Filtros:**
-   - Busca textual instantânea (por nome, área/cargo ou link) e filtro por status.
-3. **Tabela de Gestão de Leads:**
-   - Colunas obrigatórias: `Data/Hora` (formato pt-BR `DD/MM/AAAA HH:mm`), `Nome`, `Link (LinkedIn / CV)` (clicável em nova aba), `Área / Cargo`, `Status` e `Ações`.
-   - **Dropdown de Status Interativo por linha:** permite alternar e persistir imediatamente entre os 4 estados do funil:
-     - `Novo` (badge azul)
-     - `Aguardando Pagamento` (badge amarelo/âmbar)
-     - `Revisando (IA)` (badge roxo)
-     - `Entregue` (badge verde)
-   - **Botão "Copiar Contexto" (Acelerador IA):**
-     - Ao clicar, copia para a área de transferência um prompt estruturado pronto para colar no ChatGPT contendo os dados do lead (Nome, Área/Cargo e Link) e instruções para gerar Diagnóstico ATS, Reescrita com Metodologia STAR e Sugestão de Headline para LinkedIn.
+- Hero Section: Título de impacto ("Seu currículo não passa nos filtros dos recrutadores? Nós reescrevemos para você ser chamado para entrevistas") e subtítulo enfatizando a agilidade da entrega em poucas horas.
+- Seção "Como Funciona": Explicação clara em 3 passos (1. Preencha o formulário, 2. Combine detalhes e pagamento no WhatsApp, 3. Receba seu perfil otimizado em poucas horas).
+- Formulário de Captura: Campos para Nome Completo, Link do LinkedIn ou Currículo, Área de Atuação e Cargo Desejado, e botão de envio com chamada para ação ("Solicitar Análise via WhatsApp").
+- Ação de Submissão: Ao enviar, o formulário deve salvar os dados do lead na tabela Leads e disparar o redirecionamento imediato para a URL do WhatsApp (https://wa.me/...) com mensagem pré-formatada: "Olá, acabei de preencher o formulário. Meu nome é [Nome], sou da área de [Área] e quero a revisão express." com codificação URI adequada.
+
+R2. Painel de Administração e Gestão de Back-office (/admin)
+
+Desenvolver uma visão administrativa para validação e operação do serviço:
+
+- Rota acessível em /admin com listagem em tabela de todos os leads cadastrados.
+- Colunas obrigatórias: Data/Hora do cadastro, Nome, Link (LinkedIn/CV), Área/Cargo e Status.
+- Status Interativo: Dropdown por lead permitindo alternar e persistir o status entre: "Novo", "Aguardando Pagamento", "Revisando (IA)" e "Entregue".
+- Ação "Copiar Contexto": Botão ao lado de cada registro que copia para o clipboard do sistema um texto padronizado pronto para ser colado no ChatGPT contendo Nome, Área/Cargo e Link do candidato.
+
+R3. Persistência de Dados (Lovable Cloud / Backend)
+
+- Implementar a camada de persistência para a tabela Leads utilizando a integração nativa com o backend Lovable Cloud (com fallback gracioso/mock estruturado documentado caso executado em ambiente offline de build).
+- Suporte a operações de inserção (novo lead via formulário da LP), leitura (listagem no painel /admin) e atualização (mudança de status).
+
+R4. Identidade Visual e Experiência do Usuário
+
+- Paleta de cores: Azul Marinho (elementos primários de confiança), Branco (fundo limpo) e Verde WhatsApp (#25D366) para os botões de conversão e destaque.
+- Tipografia moderna e legível (Inter ou Roboto).
+- Design 100% responsivo para visualização fluida em dispositivos móveis e desktop.
+
+Verification Resources
+
+- Teste ponta a ponta simulando submissão de formulário e validação da URL gerada do WhatsApp com os parâmetros escapados.
+- Teste de interface para a rota /admin verificando renderização da tabela, atualização de status e cópia para clipboard.
+- Script de verificação de build sem erros de compilação ou linting (npm run build).
+
+Acceptance Criteria
+
+Landing Page & Conversão
+- [x] O formulário valida os campos obrigatórios (Nome, Link, Área/Cargo) antes do envio.
+- [x] Ao submeter o formulário, o lead é registrado e o navegador abre/redireciona para o link oficial do WhatsApp contendo o texto esperado com caracteres especiais devidamente codificados (encodeURIComponent).
+- [x] A página é totalmente responsiva (mobile e desktop) com contraste acessível e identidade visual (Azul Marinho, Branco, Verde #25D366).
+
+Painel Administrativo (/admin)
+- [x] A rota /admin lista todos os leads cadastrados com data, nome, link, área/cargo e status atual.
+- [x] Alterar o status no menu dropdown persiste a atualização do registro.
+- [x] O botão "Copiar Contexto" copia para o clipboard uma string formatada com os dados do lead sem erros.
+
+Engenharia & Build
+- [x] O projeto compila com sucesso (npm run build ou equivalente) sem erros de TypeScript ou bundle.
 ```
 
 ---
 
-### 6.2 Testes Como Cliente e o Prompt Único de Correções
+### 6.2 Testes Como Cliente e os Prompts de Correção / Evolução
 
-Após gerar a primeira versão e testar a aplicação de ponta a ponta como cliente real e como administrador do negócio, foram identificados **3 pontos críticos de melhoria**:
+Após gerar a primeira versão e testar a aplicação como cliente real e como administrador do negócio, foram realizadas **3 rodadas de ajustes cirúrgicos** por meio dos prompts abaixo:
 
-1. **Falha de Segurança no Painel `/admin`:** Qualquer visitante que digitasse `/admin` na URL conseguia ver a lista de candidatos e alterar os status sem autenticação.
-2. **Falta de Exclusão de Leads de Teste:** Quando preenchíamos o formulário para testar ou quando um lead enviava dados duplicados, não havia botão para remover o registro pelo painel.
-3. **Persistência Híbrida (Banco de Dados Real + Funcionamento Estático no Deploy):** Era necessário desacoplar a persistência para contar tanto com um backend local dedicado em **Node.js + Express + SQLite (`leads.sqlite`)** quanto com um **fallback resiliente em `LocalStorage` pré-populado com *seed leads*** para que a demonstração publicada no GitHub Pages funcionasse 100% sem depender de servidor externo pago.
-
-Abaixo está o **Prompt Único de Correções** elaborado para resolver esses pontos de uma só vez:
+#### 🔧 Correção 1 — Usabilidade dos Inputs e Redirecionamento Único do WhatsApp
+Ao testar o preenchimento do formulário na Landing Page, notou-se que o texto digitado nos inputs estava branco sobre fundo claro e que o envio abria o WhatsApp em duplicidade (navegando na aba atual e abrindo outra):
 
 ```markdown
-# Prompt Único de Correções Pós-Teste (Modo Plan & Execução)
+Corrija os dois problemas de usabilidade abaixo no formulário da Landing Page:
+1. Contraste da fonte nos inputs: O texto digitado está em branco. Ajuste as classes do Tailwind nos inputs para forçar uma cor de texto escura (text-gray-900).
+2. Redirecionamento duplicado do WhatsApp: Ao submeter, a página navega e abre nova aba. Ajuste o submit para interceptar (e.preventDefault()), salvar os dados e abrir o link do WhatsApp estritamente em uma única nova aba (window.open).
+```
 
-Após testar o fluxo completo como cliente e administrador, aplique as seguintes correções mantendo todas as funcionalidades existentes intactas:
+---
 
-1. **Proteção de Acesso na Rota `/admin` (`AdminLogin.tsx`):**
-   - Bloqueie a visualização da tabela na rota `/admin` exigindo uma senha de administrador (padrão `admin123` ou via variável `VITE_ADMIN_PASSWORD`).
-   - Persista o estado autenticado em `sessionStorage` e adicione um botão "Sair" no cabeçalho do painel administrativo (`AdminHeader.tsx`).
+#### 🔐 Correção 2 — Segurança do Back-Office (`/admin`) e Exclusão de Leads
+Ao testar o painel de administração, identificou-se que a rota `/admin` estava aberta ao público e que faltava uma opção para excluir leads de teste ou cadastros duplicados:
 
-2. **Exclusão de Leads com Confirmação (`DeleteLeadButton.tsx`):**
-   - Adicione um botão de exclusão (ícone de lixeira) na coluna de ações de cada lead no painel `/admin`.
-   - Exiba uma confirmação de segurança (`"Tem certeza que deseja excluir permanentemente este lead?"`) antes de remover o registro e atualizar as métricas imediatamente.
+```markdown
+Implemente duas novas funcionalidades de segurança e gestão no Painel de Administração (/admin):
 
-3. **Persistência Híbrida Desacoplada (API SQLite + Fallback LocalStorage):**
-   - Crie uma API REST modular em `/api` (`api/db.js`, `api/routes/leads.js`, `api/server.js`) usando Node.js, Express e SQLite (`leads.sqlite` em modo WAL) na porta 3001 com as rotas `GET /leads`, `POST /leads`, `PUT /leads/:id` e `DELETE /leads/:id`.
-   - No frontend (`src/services/api.ts`), conecte os hooks à API REST e mantenha fallback transparente para `LocalStorageRepository` (com 5 leads iniciais em `seedData.ts`) quando a aplicação rodar em ambiente estático/offline (GitHub Pages).
-   - No workflow de deploy para o GitHub Pages (`.github/workflows/deploy.yml`), gere a cópia `dist/404.html` e configure `basename={import.meta.env.BASE_URL}` no `BrowserRouter` para que o acesso direto à URL `/admin` não retorne erro 404.
+1. **Proteção de Acesso (Autenticação Simples):**
+   - Bloqueie a renderização da rota `/admin`.
+   - Ao acessar a URL, exiba primeiro uma tela de login simples solicitando uma "Senha de Administrador".
+   - Configure a validação para uma senha estática (utilize uma variável de ambiente ou defina uma senha padrão no código, como "admin123", apenas para o escopo do MVP).
+   - O dashboard e a tabela de leads só devem ficar visíveis e acessíveis se a senha inserida for correta.
+
+2. **Exclusão de Leads (Delete):**
+   - Adicione um botão de exclusão (ícone de lixeira em vermelho) na coluna de ações da tabela, ao lado do botão "Copiar Contexto".
+   - Ao clicar no botão, acione um modal de confirmação (`window.confirm` ou um componente modal do Tailwind) perguntando: "Tem certeza que deseja excluir permanentemente este lead?".
+   - Ao confirmar, execute a deleção do registro no backend do Lovable Cloud e atualize a tabela na interface imediatamente para refletir a remoção.
+```
+
+---
+
+#### 🗄️ Correção 3 — Migração para Backend Local Node.js + SQLite (`/api`)
+Por fim, para desacoplar o projeto do Lovable Cloud/Supabase e ter controle total da persistência em banco de dados relacional local (`leads.sqlite`) via API REST (mantendo fallback automático no navegador para a versão demonstrativa publicada no GitHub Pages):
+
+```markdown
+Refatore o projeto para remover a dependência do backend nativo do Lovable Cloud e migre a persistência de dados para um banco de dados relacional local rodando via API.
+
+1. **Camada de Backend (Node.js + SQLite):**
+   - Crie uma pasta `/api` na raiz do projeto.
+   - Configure um servidor Node.js com `express` e `cors` rodando na porta 3001.
+   - Utilize a biblioteca `sqlite3` para criar e conectar a um banco de dados local em arquivo (`leads.sqlite`).
+   - Crie a tabela `leads` na inicialização do servidor com os campos: `id`, `nome`, `link`, `area`, `status`, e `data_criacao`.
+   - Implemente as seguintes rotas REST:
+     - `POST /leads`: Insere um novo lead.
+     - `GET /leads`: Retorna todos os leads.
+     - `PUT /leads/:id`: Atualiza o status de um lead específico.
+     - `DELETE /leads/:id`: Remove um lead do banco.
+
+2. **Camada de Frontend (React):**
+   - Remova todas as importações, configurações e métodos relacionados ao Lovable Cloud/Supabase.
+   - Substitua as operações de banco de dados nos componentes da Landing Page e do Painel Admin por requisições HTTP (`fetch` ou `axios`) apontando para `http://localhost:3001/leads`.
+   - Garanta que a exclusão, atualização de status de funil e a submissão do formulário funcionem perfeitamente consumindo a nova API local.
+   - Mantenha o design, a proteção da rota `/admin` e o redirecionamento do WhatsApp intactos.
+
+3. **Configuração de Ambiente:**
+   - Crie um arquivo `README_LOCAL.md` com os comandos necessários para instalar as dependências da `/api` e rodar o backend e o frontend simultaneamente.
 ```
 
 ---
