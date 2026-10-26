@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.10" />
+    </filter>
+  </defs>
+
+  <!-- Browser Window Frame -->
+  <rect width="1200" height="720" rx="14" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2" />
+  <rect width="1200" height="44" rx="14" fill="#0F172A" />
+  <rect y="24" width="1200" height="20" fill="#0F172A" />
+  <circle cx="24" cy="22" r="6" fill="#EF4444" />
+  <circle cx="44" cy="22" r="6" fill="#F59E0B" />
+  <circle cx="64" cy="22" r="6" fill="#10B981" />
+  <rect x="260" y="9" width="680" height="26" rx="6" fill="#1E293B" />
+  <text x="600" y="26" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">https://projectagent.github.io/curriculo-express/#solicitar</text>
+
+  <!-- Form Card (Left) -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="84" width="580" height="580" rx="20" fill="#FFFFFF" stroke="#E2E8F0" />
+    <rect x="60" y="84" width="580" height="8" rx="4" fill="#1E3A8A" />
+
+    <text x="100" y="138" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="800" fill="#0F172A">Comece sua Revisão Express Agora</text>
+    <text x="100" y="162" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#64748B">Preencha seus dados abaixo para iniciar o atendimento imediato no WhatsApp.</text>
+
+    <!-- Field 1: Nome Completo -->
+    <text x="100" y="206" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#334155">NOME COMPLETO *</text>
+    <rect x="100" y="216" width="500" height="46" rx="10" fill="#F8FAFC" stroke="#1E3A8A" stroke-width="1.5" />
+    <text x="118" y="244" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#0F172A" font-weight="500">Mariana Souza</text>
+
+    <!-- Field 2: Link do LinkedIn ou Currículo -->
+    <text x="100" y="294" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#334155">LINK DO LINKEDIN OU CURRÍCULO (DRIVE/PDF) *</text>
+    <rect x="100" y="304" width="500" height="46" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" />
+    <text x="118" y="332" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#0F172A">https://linkedin.com/in/mariana-souza-dev</text>
+
+    <!-- Field 3: Área de Atuação / Cargo Desejado -->
+    <text x="100" y="382" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#334155">ÁREA DE ATUAÇÃO E CARGO DESEJADO *</text>
+    <rect x="100" y="392" width="500" height="46" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" />
+    <text x="118" y="420" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#0F172A">Desenvolvedora Frontend React Júnior</text>
+
+    <!-- Submit Button -->
+    <rect x="100" y="464" width="500" height="54" rx="12" fill="#25D366" />
+    <text x="350" y="497" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="800" fill="#0F172A" text-anchor="middle">Solicitar Análise via WhatsApp</text>
+
+    <!-- Confirmation Banner -->
+    <rect x="100" y="538" width="500" height="96" rx="12" fill="#ECFDF5" stroke="#A7F3D0" />
+    <circle cx="128" cy="566" r="10" fill="#10B981" />
+    <text x="128" y="570" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle">✓</text>
+    <text x="148" y="570" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#065F46">Solicitação registrada com sucesso!</text>
+    <text x="148" y="592" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#047857">Redirecionando para o WhatsApp oficial...</text>
+    <text x="148" y="614" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#059669" text-decoration="underline">Clique aqui caso o WhatsApp não tenha aberto automaticamente →</text>
+  </g>
+
+  <!-- WhatsApp Redirection Preview Card (Right) -->
+  <g filter="url(#shadow)">
+    <rect x="680" y="84" width="460" height="580" rx="20" fill="#0B141A" stroke="#1E293B" />
+    <rect x="680" y="84" width="460" height="68" rx="20" fill="#202C33" />
+    <circle cx="722" cy="118" r="20" fill="#25D366" />
+    <text x="722" y="124" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="800" fill="#0F172A" text-anchor="middle">CV</text>
+    <text x="754" y="114" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#E9EDEF">Currículo Express Tech (Oficial)</text>
+    <text x="754" y="133" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#8696A0">online • Fechamento Concierge MVP</text>
+
+    <!-- Outgoing WhatsApp Bubble -->
+    <rect x="720" y="186" width="390" height="122" rx="14" fill="#005C4B" />
+    <text x="738" y="214" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#E9EDEF">Olá, acabei de preencher o formulário.</text>
+    <text x="738" y="236" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#E9EDEF">Meu nome é <tspan font-weight="700" fill="#25D366">Mariana Souza</tspan>, sou da área de</text>
+    <text x="738" y="258" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#E9EDEF"><tspan font-weight="700" fill="#25D366">Desenvolvedora Frontend React Júnior</tspan></text>
+    <text x="738" y="280" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#E9EDEF">e quero a revisão express.</text>
+    <text x="1062" y="296" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#8696A0">14:02 ✓✓</text>
+
+    <!-- Incoming Consultant Bubble -->
+    <rect x="706" y="334" width="380" height="134" rx="14" fill="#202C33" />
+    <text x="724" y="362" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#E9EDEF">Olá, Mariana! Recebemos seu perfil aqui no</text>
+    <text x="724" y="382" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#E9EDEF">sistema (LinkedIn: mariana-souza-dev).</text>
+    <text x="724" y="408" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#E9EDEF">Para iniciarmos seu Diagnóstico ATS +</text>
+    <text x="724" y="428" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#E9EDEF">Reescrita Express hoje, segue o link/Pix:</text>
+    <text x="724" y="450" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#25D366" font-weight="700">✓ Pagamento manual validando a tese do MVP</text>
+
+    <!-- Architecture Callout Box -->
+    <rect x="706" y="496" width="408" height="138" rx="12" fill="#111B21" stroke="#2A3942" />
+    <text x="724" y="522" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" fill="#25D366">FLUXO AUTOMÁTICO EXECUTADO NO ENVIO:</text>
+    <text x="724" y="546" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#CBD5E1">1. Validação estrita de URL (http/https) e campos</text>
+    <text x="724" y="568" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#CBD5E1">2. Persistência imediata com status "Novo"</text>
+    <text x="724" y="590" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#CBD5E1">3. Codificação URI segura (encodeURIComponent)</text>
+    <text x="724" y="612" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#CBD5E1">4. Abertura de https://wa.me/5511999999999?text=...</text>
+  </g>
+</svg>

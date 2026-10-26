@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#1E3A8A" />
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Browser Window Frame -->
+  <rect width="1200" height="760" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2" />
+  <rect width="1200" height="44" rx="14" fill="#0F172A" />
+  <rect y="24" width="1200" height="20" fill="#0F172A" />
+  <circle cx="24" cy="22" r="6" fill="#EF4444" />
+  <circle cx="44" cy="22" r="6" fill="#F59E0B" />
+  <circle cx="64" cy="22" r="6" fill="#10B981" />
+  <rect x="260" y="9" width="680" height="26" rx="6" fill="#1E293B" />
+  <text x="600" y="26" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">https://projectagent.github.io/curriculo-express/</text>
+
+  <!-- Navbar -->
+  <rect y="44" width="1200" height="64" fill="#0F172A" />
+  <line x1="0" y1="108" x2="1200" y2="108" stroke="#1E293B" stroke-width="1" />
+  <rect x="80" y="60" width="32" height="32" rx="8" fill="#25D366" />
+  <text x="96" y="81" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="800" fill="#0F172A" text-anchor="middle">CV</text>
+  <text x="124" y="82" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">Currículo Express <tspan fill="#25D366">Tech</tspan></text>
+  <rect x="970" y="62" width="150" height="28" rx="6" fill="#1E293B" stroke="#334155" />
+  <text x="1045" y="80" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#CBD5E1" text-anchor="middle">Painel Admin (/admin)</text>
+
+  <!-- Hero Section -->
+  <rect y="108" width="1200" height="340" fill="url(#heroGrad)" />
+
+  <!-- Top Badge -->
+  <rect x="435" y="136" width="330" height="28" rx="14" fill="#1E293B" stroke="#334155" />
+  <circle cx="454" cy="150" r="4" fill="#25D366" />
+  <text x="608" y="154" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#E2E8F0" text-anchor="middle">ESPECIALISTAS EM RECRUTAMENTO TECH &amp; ATS</text>
+
+  <!-- Hero Headline -->
+  <text x="600" y="206" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="800" fill="#FFFFFF" text-anchor="middle">Seu currículo não passa nos filtros dos recrutadores?</text>
+  <text x="600" y="246" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="800" fill="#25D366" text-anchor="middle">Nós reescrevemos para você ser chamado para entrevistas</text>
+
+  <!-- Hero Subtitle -->
+  <text x="600" y="286" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#CBD5E1" text-anchor="middle">Otimização profissional com foco em algoritmos ATS e recrutadores tech.</text>
+  <text x="600" y="308" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#CBD5E1" text-anchor="middle">Análise e reescrita do seu perfil entregues em poucas horas.</text>
+
+  <!-- Hero CTA Button -->
+  <rect x="445" y="332" width="310" height="48" rx="12" fill="#25D366" />
+  <text x="600" y="361" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0F172A" text-anchor="middle">Solicitar Análise via WhatsApp →</text>
+
+  <!-- Hero Feature Pills -->
+  <text x="350" y="416" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">✓ Aprovação nos sistemas ATS (Gupy, Greenhouse)</text>
+  <text x="635" y="416" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">✓ Metodologia STAR para impacto</text>
+  <text x="890" y="416" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">✓ Entrega expressa em horas</text>
+
+  <!-- How It Works Section -->
+  <text x="600" y="492" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="800" fill="#0F172A" text-anchor="middle">Como Funciona a Revisão Express</text>
+  <text x="600" y="516" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#64748B" text-anchor="middle">Um processo rápido, direto e sem burocracia para destravar suas entrevistas.</text>
+
+  <!-- Step 1 Card -->
+  <g filter="url(#cardShadow)">
+    <rect x="80" y="544" width="320" height="175" rx="16" fill="#FFFFFF" stroke="#E2E8F0" />
+    <rect x="104" y="568" width="40" height="40" rx="10" fill="#0F172A" />
+    <text x="124" y="594" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="800" fill="#25D366" text-anchor="middle">1</text>
+    <text x="104" y="636" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">1. Preencha o formulário</text>
+    <text x="104" y="662" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#475569">Envie seu nome, link do currículo ou</text>
+    <text x="104" y="680" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#475569">LinkedIn e a área de tecnologia que</text>
+    <text x="104" y="698" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#475569">você quer atingir.</text>
+  </g>
+
+  <!-- Step 2 Card -->
+  <g filter="url(#cardShadow)">
+    <rect x="440" y="544" width="320" height="175" rx="16" fill="#FFFFFF" stroke="#E2E8F0" />
+    <rect x="464" y="568" width="40" height="40" rx="10" fill="#0F172A" />
+    <text x="484" y="594" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="800" fill="#25D366" text-anchor="middle">2</text>
+    <text x="464" y="636" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">2. Combine no WhatsApp</text>
+    <text x="464" y="662" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#475569">Você é direcionado ao nosso WhatsApp</text>
+    <text x="464" y="680" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#475569">oficial para alinhar expectativas,</text>
+    <text x="464" y="698" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#475569">objetivos e confirmar o pedido.</text>
+  </g>
+
+  <!-- Step 3 Card -->
+  <g filter="url(#cardShadow)">
+    <rect x="800" y="544" width="320" height="175" rx="16" fill="#FFFFFF" stroke="#E2E8F0" />
+    <rect x="824" y="568" width="40" height="40" rx="10" fill="#0F172A" />
+    <text x="844" y="594" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="800" fill="#25D366" text-anchor="middle">3</text>
+    <text x="824" y="636" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">3. Receba em poucas horas</text>
+    <text x="824" y="662" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#475569">Geramos o diagnóstico ATS completo</text>
+    <text x="824" y="680" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#475569">e entregamos sua nova versão pronta</text>
+    <text x="824" y="698" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#475569">para aplicar em vagas tech.</text>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620">
+  <defs>
+    <filter id="loginShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Browser Window Frame -->
+  <rect width="1200" height="620" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2" />
+  <rect width="1200" height="44" rx="14" fill="#0F172A" />
+  <rect y="24" width="1200" height="20" fill="#0F172A" />
+  <circle cx="24" cy="22" r="6" fill="#EF4444" />
+  <circle cx="44" cy="22" r="6" fill="#F59E0B" />
+  <circle cx="64" cy="22" r="6" fill="#10B981" />
+  <rect x="260" y="9" width="680" height="26" rx="6" fill="#1E293B" />
+  <text x="600" y="26" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">https://projectagent.github.io/curriculo-express/admin</text>
+
+  <!-- Admin Top Header Bar -->
+  <rect y="44" width="1200" height="64" fill="#0F172A" />
+  <rect x="80" y="60" width="32" height="32" rx="8" fill="#25D366" />
+  <text x="96" y="81" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="800" fill="#0F172A" text-anchor="middle">CV</text>
+  <text x="124" y="82" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">Currículo Express <tspan fill="#25D366">Tech</tspan> — Back-Office</text>
+
+  <!-- Login Card -->
+  <g filter="url(#loginShadow)">
+    <rect x="380" y="156" width="440" height="390" rx="20" fill="#FFFFFF" stroke="#E2E8F0" />
+    <rect x="380" y="156" width="440" height="8" rx="4" fill="#0F172A" />
+
+    <!-- Lock Icon Box -->
+    <rect x="576" y="192" width="48" height="48" rx="12" fill="#F1F5F9" stroke="#E2E8F0" />
+    <text x="600" y="223" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#0F172A" text-anchor="middle">🔒</text>
+
+    <text x="600" y="272" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="800" fill="#0F172A" text-anchor="middle">Acesso Restrito</text>
+    <text x="600" y="294" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">Informe a Senha de Administrador para acessar a gestão de leads</text>
+
+    <!-- Password Input -->
+    <text x="416" y="336" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#334155">SENHA DE ADMINISTRADOR *</text>
+    <rect x="416" y="346" width="368" height="46" rx="10" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1.5" />
+    <text x="434" y="375" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#0F172A" letter-spacing="3">••••••••</text>
+
+    <!-- Submit Button -->
+    <rect x="416" y="412" width="368" height="48" rx="12" fill="#0F172A" />
+    <text x="600" y="441" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Acessar Painel</text>
+
+    <text x="600" y="492" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle">← Voltar para a Landing Page</text>
+    <text x="600" y="522" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">Proteção por sessão autenticada (sessionStorage)</text>
+  </g>
+</svg>
